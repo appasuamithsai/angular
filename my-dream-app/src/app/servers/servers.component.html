@@ -1,0 +1,16 @@
+<input type="text"  [(ngModel)]="serverName"
+/>
+<!-- <input type="text"  
+(input)="onUpdateServerName($event)"
+/> -->
+            <!-- <p>{{ serverName }}</p> -->
+<button class="btn btn-primary" (click)="onCreateServer()" [disabled]="!allowNewServer">Add Server</button>
+<p *ngIf="serverAdded; else noServer">{{serverCreatedStatus}}</p>
+<ng-template #noServer>
+    <p>
+        No server Created
+    </p>
+</ng-template>
+<app-server *ngFor="let server of servers; let i = index">
+
+</app-server>
