@@ -1,0 +1,56 @@
+<div class="container">
+    <div>
+        <app-icon-typography [left]="false" content="Summary" variant="headline-2" iconPath="assets/images/warning.png"
+            shape="17px"></app-icon-typography>
+    </div>
+    <div class="grid-style space">
+        <div class="mat-body-1 heading">Term</div>
+        <div class="mat-body-1">12 months</div>
+    </div>
+    <div class="grid-style">
+        <div class="mat-body-1 heading">Selected contracts</div>
+        <div class="mat-body-1" id="selected-contracts">{{ selectedContracts }}</div>
+    </div>
+    <div class="space" *ngIf="!selected">
+        <div class="grid-style">
+            <div class="mat-body-1 heading">Slide to autoselect</div>
+            <button mat-raised-button color="secondary" [disabled]="disabled" [ngClass]="{ 'reset-style' : disabled}" (click)="onReset()">
+                <div class="mat-button">Reset</div>
+            </button>
+        </div>
+        <div>
+            <app-slider [value]="totalSelectedAmount" [max]="totalAmount"></app-slider>
+        </div>
+        <div class="display-flex">
+            <div class="top">${{ totalSelectedAmount }}</div>
+            <div class="mat-body-1 heading"> selected of ${{ totalAmount }} </div>
+        </div>
+    </div>
+    <div class="space">
+        <div class="grid-style">
+            <div class="mat-body-1 heading">Pay back amount</div>
+            <div class="mat-body-1">${{ paybackAmount }}</div>
+        </div>
+        <div class="grid-style">
+            <div class="mat-body-1 heading">Rate %</div>
+            <div class="display-flex">
+                <div class="mat-caption custom">(12.00%)</div>
+                <div class="mat-body-1">${{rate}}</div>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <div class="space">
+        <div class="grid-style">
+            <div class="mat-headline-1 heading">Total Payable</div>
+            <div class="mat-headline-1">${{payAmount}}</div>
+        </div>
+    </div>
+    <div class="space">
+        <button mat-raised-button color="primary" class="button-style" [disabled]="disabled" [ngClass]="{ 'review-style' : disabled}" 
+        (click)="selected ? onSubmitReview() : onReviewCredit()">
+            <div class="mat-button">{{ selected ? "Submit your credit" : "Review your credit" }}</div>
+        </button>
+    </div>
+</div>

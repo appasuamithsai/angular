@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "~@angular/material/prebuilt-themes/deeppurple-amber"; */
+@font-face {
+    font-family: "Gilroy";
+    src: url("../src/assets/fonts/Gilroy-Regular.otf"); 
+}
+*{
+    font-family: "Gilroy",sans-serif;
+}
+
+:root {
+    --color-white-500: #E8E8E9;
+    --color-primary-400: #B4A9FF;
+    --color-primary-500: #6C5DD3;
+    --color-primary-600: #393552;
+    --color-accent-300: #2D2D30;
+    --color-accent-500: #201F24;
+    --color-accent-700: #19181C;
+    --color-accent-grey: #262529;
+    --color-accent-contrast-300: #413F4D;
+    --color-accent-contrast-500: #28272B;
+    --color-text-low: #A5A5A6;
+    --color-text-medium: #C9C8CC;
+    --color-text-high: #E8E7F0;
+    --color-white: #ffffff;
+    --color-icon-low: #727080;
+    --color-icon-high: #D4D2DE;
+  }
+html, body { height: 100%; background-color: var(--color-accent-700); color: var(--color-text-high) ; }
+body { margin: 0; font-family: 'Gilroy', "Helvetica Neue", sans-serif; }
+.mat-mdc-slider .mdc-slider__thumb-knob{
+    border-width: 3px !important;
+    border-radius:8px !important;
+    border-color: var(--color-primary-400) !important;
+}
+
+.mat-ripple{
+    display: none;
+}
+
+.mat-headline-2, .mat-typography .mat-headline-2 {
+    margin: 0px;
+}
+.mat-grid-tile-content{
+    justify-content: start !important;
+}
+.mdc-checkbox__ripple{
+    display: none;
+}
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background{
+    border-color: var(--color-icon-low) !important;
+}
+.mat-headline-1, .mat-typography .mat-headline-1{
+    margin: 0 !important;
+}
+

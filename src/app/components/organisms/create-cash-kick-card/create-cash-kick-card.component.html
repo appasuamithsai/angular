@@ -1,0 +1,20 @@
+<div class="container">
+    <div>
+        <div class="mat-headline-2 heading">Name your cash kick</div>
+        <img src="assets/images/close.png" class="close-style" (click)="onCancelCreateCashkick()">
+
+        <div class="mat-headline-1">Add a name to identify your cash kick</div>
+    </div>
+    <div class="second-container">
+        <div class="mat-body-1" [ngClass]="{ 'inp-text-style' : !disabled}">Cash kick name</div>
+        <app-input placeholder="Ex: marketing expenses"></app-input>
+    </div>
+    <div class="footer-style">
+        <button mat-raised-button color="secondary" class="cancel-style" (click)="onCancelCreateCashkick()">
+            <div class="mat-button">Cancel</div>
+        </button>
+        <button mat-raised-button color="primary" [ngClass]=" disabled ? 'submit-disable-style' : 'submit-style'" class="submit-style" [disabled]="disabled" (click)="onCreateCashkick()">
+            <div class="mat-button">Create cash kick</div>
+        </button>
+    </div>
+</div>

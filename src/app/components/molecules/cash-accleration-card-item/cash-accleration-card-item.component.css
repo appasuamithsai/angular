@@ -1,0 +1,11 @@
+.container {
+    width:204px;
+    height:179px
+}
+
+.image {
+    margin-bottom: 24px;
+}
+.typo-style{
+    color: var(--color-text-medium);
+}

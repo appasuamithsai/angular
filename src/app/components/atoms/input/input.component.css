@@ -1,0 +1,19 @@
+input {
+    padding: 12px 17px;
+    width: 555px;
+    height: 56px;
+    background: #3A3A3D;
+    border: 1px solid var(--color-accent-contrast-300);
+    border-radius: 12px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--color-text-medium);
+}
+
+input:focus-visible{
+    border: 1px solid var(--color-primary-400);
+    outline: 0;
+}

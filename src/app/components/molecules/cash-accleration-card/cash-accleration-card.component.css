@@ -1,0 +1,10 @@
+.grid-container {
+    width: 660px;
+    padding: 32px;
+    background: var(--color-accent-500);
+    border: 1px solid var(--color-accent-contrast-500);
+    border-radius: 12px;
+}
+.grid-one-style {
+    margin-left: 32px;
+}

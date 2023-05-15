@@ -1,0 +1,9 @@
+.icon-typo {
+    display: flex;
+}
+.left-icon {
+    margin: 2px 10px 0px 0px;
+}
+.right-icon {
+    margin: 3px 0px 0px 10px;
+}
