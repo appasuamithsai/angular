@@ -1,0 +1,60 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" [ngStyle]="{'width':width}">
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select" *ngIf="checkbox">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()"
+                      [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="onContractChecked($event,selection,row)"
+                      [checked]="selection.isSelected(row)"
+                      [aria-label]="checkboxLabel(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef><div class="mat-body-2"> Id. </div></th>
+      <td mat-cell *matCellDef="let element"><div class="mat-body-2">{{element.id}}</div></td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef><div class="mat-body-2"> Name </div></th>
+      <td mat-cell *matCellDef="let element"> <div class="mat-body-2 nameStyle">{{element.name}}</div> </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> <div class="mat-body-2">Type</div> </th>
+      <td mat-cell *matCellDef="let element"> <div class="mat-body-2">{{element.type}}</div> </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="perPayment">
+      <th mat-header-cell *matHeaderCellDef> <div class="mat-body-2">Per payment </div></th>
+      <td mat-cell *matCellDef="let element"> <div class="mat-body-2">${{element.perPayment}}</div> </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="termLength">
+        <th mat-header-cell *matHeaderCellDef> <div class="mat-body-2">Term length </div></th>
+        <td mat-cell *matCellDef="let element"> <div class="mat-body-2">{{element.termLength.months}}</div><div class="mat-caption">{{element.termLength.percent}}</div> </td>
+      </ng-container>
+    <ng-container matColumnDef="paymentAmount">
+        <th mat-header-cell *matHeaderCellDef> <div class="mat-body-2">Payment amount </div></th>
+        <td mat-cell *matCellDef="let element"> <div class="mat-body-2">${{element.paymentAmount}}</div> </td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        (click)=" !selected && onSelectContract(selection,row)" 
+        [class.selected]="this.currentRowID.includes(row.id)"
+        [class]="getRowClass(row.id)">
+    </tr>
+  </table>
+  

@@ -1,0 +1,24 @@
+<div class="container">
+    <div>
+        <div class="mat-headline-2 heading">Cash kick launched successfully!</div>
+        <img src="assets/images/close.png" class="close-style" (click)="onCancel()">
+
+        <div class="mat-headline-1">We are reviewing your cash kick</div>
+    </div>
+    <div class="second-container">
+        <img src="assets/images/success.png">
+
+        <div class="mat-headline-1 img-text" >Your cash kick is under review</div>
+
+        <div class="mat-body-1" style="white-space: pre-line;">{{content}}</div>
+    </div>
+
+    <div class="footer-style">
+        <button mat-raised-button color="secondary" class="cancel-style" (click)="onCancel()">
+            <div class="mat-button">Cancel</div>
+        </button>
+        <button mat-raised-button color="primary" class="submit-style" (click)="onViewCashKick()">
+            <div class="mat-button">Create cash kick</div>
+        </button>
+    </div>
+</div>

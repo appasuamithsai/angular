@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="grid-style">
+        <div>
+            <div>
+                <div class="mat-subtitle-1">Cash accleration</div>
+            </div>
+            <div>
+                <div class="mat-headline-1 color-style">Place to create new cash kicks to run your business</div>
+            </div>
+        </div>
+        <div class="flex-box">
+            <div class="right">
+                <app-avatar></app-avatar>
+            </div>
+            <div class="top-three">
+                <app-svg-icon name="dropdown" path="assets/icons/dropdown.svg" shape="12px"></app-svg-icon>
+            </div>
+        </div>
+    </div>
+    <div class="grid-style top-one">
+        <div>
+            <app-cash-accleration-card></app-cash-accleration-card>
+        </div>
+        <div>
+            <app-new-cash-kick-card></app-new-cash-kick-card>
+        </div>
+    </div>
+    <div class="second-container top-two">
+        <div class="grid-style">
+            <div>
+                <app-icon-typography content="Cash accleration" variant="headline-2"
+                    iconPath="assets/images/warning.png" [left]="false" shape="22px"></app-icon-typography>
+            </div>
+            <div class="flex-box text-style">
+                <app-icon-typography content="Sync Now" variant="button" iconPath="assets/images/sync.png" [left]="true"
+                    shape="16px"></app-icon-typography>
+            </div>
+        </div>
+        <div class="flex-box top-two">
+            <div>
+                <app-chip content="My contracts" variant="button" width="147px" height="43px" [selected]="isContracts">
+                </app-chip>
+            </div>
+            <div class="left">
+                <app-chip content="My Cash Kicks" variant="button" width="153px" height="43px"
+                    [selected]="!isContracts"> </app-chip>
+            </div>
+        </div>
+        <div class="top-two">
+            <div *ngIf="isContracts">
+                <app-contracts-table width="100%" [checkbox]="false" [selected]="false"></app-contracts-table>
+            </div>
+            <div *ngIf="!isContracts">
+                <app-cash-kick-table width="100%"></app-cash-kick-table>
+            </div>
+        </div>
+    </div>
+</div>

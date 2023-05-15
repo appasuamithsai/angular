@@ -1,0 +1,9 @@
+<div class="icon-typo">
+    <div *ngIf="left" class="left-icon">
+        <img src={{iconPath}}  [ngStyle]="{'height': shape , 'width' : shape}">
+    </div>
+    <div class="mat-{{ variant }}" >{{ content }}</div>
+    <div *ngIf="!left" class="right-icon">
+        <img src={{iconPath}}  [ngStyle]="{'height': shape , 'width' : shape}">
+    </div>
+</div>
