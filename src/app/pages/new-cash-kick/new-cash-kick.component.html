@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="grid-style">
+        <div>
+            <div>
+                <div class="mat-subtitle-1">New cash kick</div>
+            </div>
+            <div>
+                <div class="mat-headline-1 color-style">Let’s setup a new cash kick to power your Saas</div>
+            </div>
+        </div>
+        <div class="flex-box">
+            <div class="right">
+                <app-avatar></app-avatar>
+            </div>
+            <div class="top-three">
+                <app-svg-icon name="dropdown" path="assets/icons/dropdown.svg" shape="12px"></app-svg-icon>
+            </div>
+        </div>
+    </div>
+    <div class="top-one">
+        <button mat-raised-button color="secondary" (click)="onBackPressed()">
+            <mat-icon>keyboard_backspace</mat-icon>
+            <div class="mat-button">Back</div>
+        </button>
+    </div>
+    <div class="grid-style top-two">
+        <div class="second-container">
+            <div>
+                <app-icon-typography content="Your Contracts" variant="headline-2" iconPath="assets/images/warning.png"
+                    [left]="false" shape="22px"></app-icon-typography>
+            </div>
+            <div class="top-four overflow">
+                <app-contracts-table width="756px" [checkbox]="true" [selected]="false"></app-contracts-table>
+            </div>
+        </div>
+        <div>
+            <app-summary-card [selected]="false"></app-summary-card>
+        </div>
+    </div>
+</div>

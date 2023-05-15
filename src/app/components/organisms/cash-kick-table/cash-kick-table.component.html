@@ -1,0 +1,39 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" [ngStyle]="{'width':width}">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef><div class="mat-body-2"> Name </div></th>
+      <td mat-cell *matCellDef="let element"><div class="mat-body-2 nameStyle">{{element.name}}</div> </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef><div class="mat-body-2"> Status </div> </th>
+      <td mat-cell *matCellDef="let element"> <app-chip [content]="element.status" variant="body-2" height="25px" width="70px"></app-chip></td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="maturity">
+      <th mat-header-cell *matHeaderCellDef> <div class="mat-body-2"> Maturity </div> </th>
+      <td mat-cell *matCellDef="let element"> <div class="mat-body-2">{{element.maturity}}</div> </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="totalRecieved">
+      <th mat-header-cell *matHeaderCellDef> <div class="mat-body-2"> Total recieved </div> </th>
+      <td mat-cell *matCellDef="let element"> <div class="mat-body-2">${{element.totalRecieved}}</div> <div class="mat-caption">12% fee</div></td>
+    </ng-container>
+  
+    <ng-container matColumnDef="totalFinanced">
+        <th mat-header-cell *matHeaderCellDef> <div class="mat-body-2"> Total financed </div> </th>
+        <td mat-cell *matCellDef="let element"> <div class="mat-body-2">${{element.totalFinanced}}</div> </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
