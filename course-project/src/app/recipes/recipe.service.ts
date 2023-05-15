@@ -8,16 +8,17 @@ import { Subject } from "rxjs";
 export class RecipeService{
     recipeChanged = new Subject<Recipe[]>();
     constructor(private slService : ShoppingListService){}
-    private recipes : Recipe[] = [
-        new Recipe("Test",
-        "This is a test",
-        "https://i.ndtvimg.com/i/2015-10/dosa_625x350_51444723752.jpg"
-        ,[new Ingredient("Onion",21),new Ingredient("Tamato",40)]),
-        new Recipe("Another Test",
-        "This is a test",
-        "https://i.ndtvimg.com/i/2015-10/dosa_625x350_51444723752.jpg",
-        [new Ingredient("Dosa",21),new Ingredient("Mirchi",40)])
-      ];
+    private recipes : Recipe[] = [];
+    // [
+    //     new Recipe("Test",
+    //     "This is a test",
+    //     "https://i.ndtvimg.com/i/2015-10/dosa_625x350_51444723752.jpg"
+    //     ,[new Ingredient("Onion",21),new Ingredient("Tamato",40)]),
+    //     new Recipe("Another Test",
+    //     "This is a test",
+    //     "https://i.ndtvimg.com/i/2015-10/dosa_625x350_51444723752.jpg",
+    //     [new Ingredient("Dosa",21),new Ingredient("Mirchi",40)])
+    //   ];
 
     getRecipe(){
         return this.recipes.slice();
@@ -42,6 +43,11 @@ export class RecipeService{
     }
     deleteRecipe(id:number){
         this.recipes.splice(id,1)
+        this.recipeChanged.next(this.recipes.slice());
+    }
+
+    setRecipes(recipes : Recipe[]){
+        this.recipes = recipes;
         this.recipeChanged.next(this.recipes.slice());
     }
 }

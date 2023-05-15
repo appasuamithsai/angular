@@ -1,0 +1,22 @@
+.container {
+    padding: 40px 20px 20px;
+    width: 250px;
+    background: #201F24;
+    border-right: 1px solid #222124;
+    color: #A5A5A6;
+    border-radius: 0px;
+}
+.menu{
+    margin-top: 58px;
+}
+.nav-item {
+    padding: 16px;
+}
+.selected-item {
+    background: #2D2D30;
+    border-radius: 12px;
+    color: #E8E7F0;
+}
+.top{
+    margin-top: 500px;
+}
